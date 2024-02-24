@@ -1,0 +1,201 @@
+:host {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    display: flex;
+    flex-direction: column;
+    .title {
+        font-size: 30px;
+        width: calc(100% - 200px);
+        margin-left: 100px;
+        margin-top: 50px;
+        font-weight: bold;
+
+    }
+    .article-container {
+        display: flex;
+        min-height: 800px;
+        margin-bottom: 100px;
+        .article-content {
+            width: 800px;
+            height: 100%;
+            display: flex;
+            //background-color: red;
+            .article-text {
+                margin-left: 100px;
+                //margin-right: 50px;
+                font-size: 20px;
+                margin-top: 50px;
+                font-family: "Arial", sans-serif;
+                //ext-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                //letter-spacing: 1px;
+            }
+        }
+        .article-data {
+            margin-top: 50px;
+            width: calc(100% - 800px);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            .authors-title {
+                font-size: 15px;
+                margin-left: 100px;
+                margin-bottom: 5px;
+            }
+            .authors-list {
+                margin-left: 100px;
+                display: flex;
+                flex-direction: column;
+                //row-gap: 10px;
+                .author-card {
+                    width: 250px;
+                    height: 40px;
+                    background-color: white;
+                    border-radius: 8px;
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 10px;
+                    img {
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        margin-left: 10px;
+
+                    }
+                    p {
+                        margin-left: 10px;
+                        font-size: 13px;
+                    }
+                }
+            }
+            .categories-title {
+                margin-top: 20px;
+                margin-bottom: 5px;
+                margin-left: 100px;
+            }
+            .categories-grid {
+                margin-left: 100px;
+                width: 300px;
+                height: 200px;
+                //background-color: white;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: flex-start;
+                row-gap: 5px;
+                column-gap: 10px;
+                .category {
+                    row-gap: 5px;
+                    height: 20px;
+                    border: 1px solid rgb(170, 218, 233);
+                    background: transparent;
+                    border-radius: 8px;
+                    display: flex;
+                    align-content: center;
+                    justify-content: center;
+                    
+                    background-color: rgb(201, 226, 235);
+                    p {
+                        margin-left: 10px;
+                        margin-right: 10px;
+                        color: rgb(101, 174, 190);
+                    }
+                }
+            }
+        }
+    }
+    .recommended-titleee {
+        margin-top: 20px;
+        margin-left: 100px;
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+    .recommended-section {
+        display: flex;
+        flex-direction: column;
+        margin-left: 100px;
+        width: calc(100% - 200px);
+        //align-items: center;
+        
+        //height: 300px;
+        //background-color: red;
+        margin-bottom: 200px;
+        .recom-item{
+            margin-bottom: 20px;
+            height: 200px;
+            width: 70%;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            border: 1px solid rgb(159, 202, 216);
+            .recom-header {
+                height: 50px;
+                margin-top: 20px;
+                display: flex;
+                justify-content: space-between;
+                .recom-title {
+                    margin-left: 20px;
+                    max-width: 70%;
+                    font-size: 20px;
+                }
+                .recom-date {
+                    font-size: 15px;
+                    margin-right: 20px;
+                }
+            }
+            .recom-authors {
+                display: flex;
+                margin-left: 20px;
+                margin-top: 10px;
+                gap: 5px;
+                .recom-author {
+                    width: 160px;
+                    border-radius: 6px;
+                    border: 1px solid lightblue;
+                    height: 35px;
+                    display: flex;
+                    align-items: center;
+                    img {
+                        margin-left: 5px;
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                    }
+                    p {
+                        margin-left: 5px;
+                        font-size: 13px;
+                    }
+                }
+            }
+            .recom-tags {
+                display: flex;
+                margin-left: 20px;
+                margin-top: 10px;
+                gap: 10px;
+                .recom-tag {
+                    height: 20px;
+                    border: 1px solid rgb(170, 218, 233);
+                    background: transparent;
+                    border-radius: 8px;
+                    display: flex;
+                    align-content: center;
+                    justify-content: center;
+                    margin-top: 20px;
+                    background-color: transparent;
+                    
+                    p {
+                        margin-left: 10px;
+                        color: rgb(101, 174, 190);
+                        margin-right: 10px;
+                        font-size: 14px;
+                    }
+                }
+            }
+            a {
+                margin-left: 660px;
+                text-decoration: none;
+                margin-top: -20px;
+            }
+        }
+    }
+}
