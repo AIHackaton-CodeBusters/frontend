@@ -13,10 +13,10 @@ export class GetArticleService {
   constructor(private http: HttpClient) { }
 
   getArticleData(articleId: string): Observable<any>  {
-    return this.http.get(`https://api.semanticscholar.org/graph/v1/paper/`+articleId+`?fields=url,year,authors,title,citationCount,referenceCount,s2FieldsOfStudy,fieldsOfStudy`)
+    return this.http.get(`https://api.semanticscholar.org/graph/v1/paper/`+articleId+`?fields=url,year,authors,title,citationCount,referenceCount,s2FieldsOfStudy,fieldsOfStudy,publicationDate,citationCount`)
   }
 
   getRecommendationData(articleId: string): Observable<any> {
-    return this.http.get(`https://api.semanticscholar.org/recommendations/v1/papers/forpaper/`+articleId+`?fields=authors,title,year,fieldsOfStudy`)
+    return this.http.get(`https://api.semanticscholar.org/recommendations/v1/papers/forpaper/`+articleId+`?fields=authors,title,year,fieldsOfStudy,publicationDate,citationCount`)
   }
 }

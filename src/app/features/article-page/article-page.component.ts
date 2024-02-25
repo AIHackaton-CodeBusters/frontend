@@ -1,18 +1,21 @@
 import { Component, OnInit, input } from '@angular/core';
 import { GetArticleService } from '../../services/get-article.service';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+
+import { TruncatePipe } from "../../pipes/truncate.pipe";
 
 @Component({
-  selector: 'app-article-page',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './article-page.component.html',
-  styleUrl: './article-page.component.scss'
+    selector: 'app-article-page',
+    standalone: true,
+    templateUrl: './article-page.component.html',
+    styleUrl: './article-page.component.scss',
+    imports: [CommonModule, RouterModule, TruncatePipe]
 })
 export class ArticlePageComponent implements OnInit {
   id: string ='';
   articleData: any;
+  
   recommendationData: any;
   constructor(private articleService: GetArticleService,
   private route: ActivatedRoute) {
@@ -26,7 +29,13 @@ export class ArticlePageComponent implements OnInit {
       this.getRecommendationData();
     })
   }
-
+  refreshPage() {
+    window.onload = () => {
+      window.scrollTo(0, 0); // Scroll to the top of the page after the page has loaded
+    };
+    window.location.reload();
+    
+  }
   getArticleData(): void {
     this.articleService.getArticleData(this.id).subscribe((result) => {
       this.articleData = result;

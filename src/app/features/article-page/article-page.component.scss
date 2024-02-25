@@ -1,16 +1,36 @@
 :host {
+    
     width: 100%;
     min-height: 100vh;
     background-color: #f0f2f5;
     display: flex;
     flex-direction: column;
     .title {
-        font-size: 30px;
+        font-size: 25px;
         width: calc(100% - 200px);
         margin-left: 100px;
         margin-top: 50px;
-        font-weight: bold;
+        font-weight: 500;
 
+    }
+    .subheader {
+        margin-left: 100px;
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+        div {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            svg {
+                width: 20px;
+                height: 20px;
+                fill: #777;
+            }
+            p {
+                color: #777;
+            }
+        }
     }
     .article-container {
         display: flex;
@@ -24,8 +44,8 @@
             .article-text {
                 margin-left: 100px;
                 //margin-right: 50px;
-                font-size: 20px;
-                margin-top: 50px;
+                font-size: 18px;
+                margin-top: 30px;
                 font-family: "Arial", sans-serif;
                 //ext-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
                 //letter-spacing: 1px;
@@ -120,6 +140,7 @@
         //background-color: red;
         margin-bottom: 200px;
         .recom-item{
+            box-shadow: 0px 1px 4px rgba(154, 161, 171, 0.3);;
             margin-bottom: 20px;
             height: 200px;
             width: 70%;
@@ -127,7 +148,7 @@
             display: flex;
             flex-direction: column;
             border-radius: 10px;
-            border: 1px solid rgb(159, 202, 216);
+            //border: 1px solid rgb(159, 202, 216);
             .recom-header {
                 height: 50px;
                 margin-top: 20px;
@@ -137,6 +158,8 @@
                     margin-left: 20px;
                     max-width: 70%;
                     font-size: 20px;
+                    color: #263387;
+                    font-weight: 500;
                 }
                 .recom-date {
                     font-size: 15px;
@@ -167,34 +190,43 @@
                     }
                 }
             }
-            .recom-tags {
+            .bottom {
+                margin-top: 30px;
                 display: flex;
-                margin-left: 20px;
-                margin-top: 10px;
-                gap: 10px;
-                .recom-tag {
-                    height: 20px;
-                    border: 1px solid rgb(170, 218, 233);
-                    background: transparent;
-                    border-radius: 8px;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                .recom-tags {
                     display: flex;
-                    align-content: center;
-                    justify-content: center;
-                    margin-top: 20px;
-                    background-color: transparent;
-                    
-                    p {
-                        margin-left: 10px;
-                        color: rgb(101, 174, 190);
-                        margin-right: 10px;
-                        font-size: 14px;
+                    margin-left: 20px;
+                    //margin-top: 10px;
+                    gap: 10px;
+                    .recom-tag {
+                        height: 20px;
+                        border: 1px solid rgb(170, 218, 233);
+                        background: transparent;
+                        border-radius: 8px;
+                        display: flex;
+                        align-content: center;
+                        justify-content: center;
+                        //margin-top: 20px;
+                        background-color: transparent;
+                        
+                        p {
+                            margin-left: 10px;
+                            color: rgb(101, 174, 190);
+                            margin-right: 10px;
+                            font-size: 14px;
+                        }
                     }
                 }
-            }
-            a {
-                margin-left: 660px;
-                text-decoration: none;
-                margin-top: -20px;
+                a {
+                    
+                    //margin-left: 660px;
+                    text-decoration: none;
+                    //margin-top: -20px;
+                    margin-right: 20px;
+                }
             }
         }
     }
