@@ -17,6 +17,14 @@ export class GetArticleService {
   }
 
   getRecommendationData(articleId: string): Observable<any> {
-    return this.http.get(`https://api.semanticscholar.org/recommendations/v1/papers/forpaper/`+articleId+`?fields=authors,title,year,fieldsOfStudy,publicationDate,citationCount`)
+    return this.http.get(`https://api.semanticscholar.org/recommendations/v1/papers/forpaper/`+articleId+`?fields=authors,title,year,fieldsOfStudy,publicationDate,citationCount,s2FieldsOfStudy`)
+  }
+  getSuggestedData(fieldsOfStudy: string[], publicationId: string): Observable<any> {
+    const url = `http://localhost:3500/suggested`;
+    const body = {
+      fieldsOfStudy: fieldsOfStudy,
+      publication_id: publicationId
+    };
+    return this.http.post<any>(url, body);
   }
 }

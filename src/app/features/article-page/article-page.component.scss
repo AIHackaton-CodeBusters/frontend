@@ -5,13 +5,30 @@
     background-color: #f0f2f5;
     display: flex;
     flex-direction: column;
-    .title {
-        font-size: 25px;
+    .header {
         width: calc(100% - 200px);
+        //background-color: red;
         margin-left: 100px;
         margin-top: 50px;
-        font-weight: 500;
-
+        display: flex;
+        justify-content: space-between;
+        .title {
+            font-size: 25px;
+            width: calc(100% - 200px);
+            
+            font-weight: 500;
+    
+        }
+        select {
+            margin-top: 10px;
+            margin-right: 10px;
+            display: flex;
+            width: 120px;
+            height: 30px;
+            border: 1px solid black;
+            border-radius: 6px;
+            background-color: white;
+        }
     }
     .subheader {
         margin-left: 100px;
@@ -34,7 +51,7 @@
     }
     .article-container {
         display: flex;
-        min-height: 800px;
+        //min-height: 800px;
         margin-bottom: 100px;
         .article-content {
             width: 800px;
@@ -42,6 +59,7 @@
             display: flex;
             //background-color: red;
             .article-text {
+                margin-bottom: 50px;
                 margin-left: 100px;
                 //margin-right: 50px;
                 font-size: 18px;

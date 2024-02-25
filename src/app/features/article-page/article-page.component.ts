@@ -1,9 +1,12 @@
 import { Component, OnInit, input } from '@angular/core';
 import { GetArticleService } from '../../services/get-article.service';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 
 import { TruncatePipe } from "../../pipes/truncate.pipe";
+import { LanguageService } from '../../services/language.service';
+import { SummaryService } from '../../services/summary.service';
+import { forkJoin } from 'rxjs';
 
 @Component({
     selector: 'app-article-page',
@@ -15,10 +18,23 @@ import { TruncatePipe } from "../../pipes/truncate.pipe";
 export class ArticlePageComponent implements OnInit {
   id: string ='';
   articleData: any;
-  
+  suggestedData:any;
+  summary: any = '';
+  supportedLanguages = [
+    { name: 'English', code: 'en' },
+    { name: 'Spanish', code: 'es' }
+    // Add more languages as needed
+  ];
+ 
+  currentLanguage: string | undefined;
   recommendationData: any;
+
+
   constructor(private articleService: GetArticleService,
-  private route: ActivatedRoute) {
+  private route: ActivatedRoute,
+  private languageService: LanguageService,
+  private router: Router,
+  private summaryService: SummaryService) {
 
   }
 
@@ -27,7 +43,10 @@ export class ArticlePageComponent implements OnInit {
       this.id = params['id'];
       this.getArticleData();
       this.getRecommendationData();
+      this.getSummary();
+      
     })
+    this.currentLanguage = this.languageService.getSelectedLanguage();
   }
   refreshPage() {
     window.onload = () => {
@@ -46,4 +65,16 @@ export class ArticlePageComponent implements OnInit {
       this.recommendationData = result;
     })
   }
+  onOptionSelected(event: Event): void {
+    const selectedOptionValue = (event.target as HTMLSelectElement).value;
+    this.router.navigate([selectedOptionValue]); // Navigate to the selected route
+  }
+  
+
+  getSummary(): void {
+    this.summaryService.getSummary(this.id).subscribe((result)=>{
+      this.summary = result;
+    })
+  }
+  
 }
